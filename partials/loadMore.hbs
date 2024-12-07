@@ -1,0 +1,9 @@
+{{^if @custom.use_pagination}}
+    {{#is "tag,author"}}
+    <script src='{{asset "js/ghost/pagination.js"}}'></script>
+    <script>
+        'use strict';
+        pagination(true);
+    </script>
+    {{/is}}
+{{/if}}

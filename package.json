@@ -1,0 +1,79 @@
+{
+    "name": "blaire",
+    "description": "The original Dope theme... upgraded and enhanced",
+    "version": "0.1.0",
+    "private": true,
+    "engines": {
+        "ghost": ">=5.9.0"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Kenneth Ballard",
+        "email": "kenneth@kennethballard.photo",
+        "url": "https://kennethballard.photo"
+    },
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/kennethballardphotographer/blaire/blaire.git"
+	},
+    "keywords": [
+        "ghost",
+        "theme",
+        "ghost-theme",
+		"photography"
+    ],
+    "config": {
+        "posts_per_page": 10,
+        "image_sizes": {
+            "s":  { "width": 300 },
+            "m":  { "width": 720 },
+            "l":  { "width": 1000 },
+            "xl": { "width": 1920 }
+        },
+        "custom": {
+            "title_font": {
+                "type": "select",
+                "options": [
+                    "Modern sans-serif",
+                    "Elegant serif"
+                ],
+                "default": "Modern sans-serif"
+            },
+            "body_font": {
+                "type": "select",
+                "options": [
+                    "Modern sans-serif",
+                    "Elegant serif"
+                ],
+                "default": "Modern sans-serif"
+            },
+            "show_author": {
+                "type": "boolean",
+                "default": true,
+                "group": "post"
+            },
+            "show_related_posts": {
+                "type": "boolean",
+                "default": true,
+                "group": "post"
+			},
+			"use_pagination": {
+				"type": "boolean",
+				"default": false
+			},
+			"tags_or_pages": {
+				"type": "select",
+				"options": [ "tags", "pages" ],
+				"default": "tags",
+				"group": "homepage",
+				"description": "See the README file for details"
+			},
+			"loop": {
+				"type": "boolean",
+				"default": false,
+				"group": "homepage",
+				"description": "Enable the Tiny Slider's looping function? Note: turn this OFF if you have a lot of tags/pages without a featured image to prevent issues."
+			}
+		}
+    }
+}

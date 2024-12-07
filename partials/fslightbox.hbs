@@ -1,0 +1,41 @@
+{{#is "post, page"}}
+<script src='{{asset "js/fslightbox/fslightbox.js"}}'></script>
+<script>
+    // Lightbox: https://fslightbox.com/
+
+    let galleries = document.querySelectorAll('.kg-gallery-card')
+    let galleryIdx = 0
+    let hasImages = false
+    
+    let lastGallery = document
+    galleries.forEach(function (gallery)
+    {
+        // Ghost has a limit of 9 images per gallery. So if two galleries are placed
+        // one immediately after the other - no other blocks between them - then
+        // treat the two galleries as if they are together.
+
+        if(lastGallery.nextElementSibling != gallery)
+            galleryIdx++
+
+        lastGallery = gallery
+
+        let images = gallery.querySelectorAll('img')
+        images.forEach(function (image)
+        {
+            hasImages = true
+            var wrapper = document.createElement('a')
+
+            wrapper.setAttribute('data-no-swup', '')
+            wrapper.setAttribute('data-fslightbox', 'gallery_' + galleryIdx.toString())
+            wrapper.setAttribute('href', image.src)
+            wrapper.setAttribute('aria-label', 'Click for Lightbox')
+
+            image.parentNode.insertBefore(wrapper, image.parentNode.firstChild)
+            wrapper.appendChild(image)
+        });
+    });
+
+    if(hasImages)
+        refreshFsLightbox()
+</script>
+{{/is}}

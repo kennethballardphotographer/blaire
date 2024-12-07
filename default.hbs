@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{meta_title}}</title>
+    {{ghost_head}}
+
+{{#is "index"}}
+    <link rel="stylesheet" href='{{asset "css/tiny-slider/tiny-slider.css"}}'>
+    <link rel="stylesheet" href='{{asset "css/tiny-slider.css"}}'>
+{{/is}}
+{{#is "post, page"}}
+    <link rel="stylesheet" href='{{asset "css/jarallax/jarallax.min.css"}}'>
+{{/is}}
+
+    <link rel="stylesheet" href='{{asset "css/screen.css"}}'>
+
+{{#is "index"}}
+    <style>
+    .logo-text { color: white; }
+    </style>
+{{/is}}
+
+    {{{block "styles"}}}
+</head>
+
+<body class="{{body_class}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Elegant serif"}} has-serif-body{{/match}}">
+<div class="site">
+
+    <header class="site-header gh-outer">
+        <div class="navbar">
+            <a class="logo" href="{{@site.url}}">
+                {{#if @site.logo}}
+                    <img class="logo-image" src="{{@site.logo}}" alt="{{@site.title}}">
+                {{else}}
+                    <span class="logo-text">{{@site.title}}</span>
+                {{/if}}
+            </a>
+            <div class="burger"></div>
+        </div>
+    </header>
+
+    <div class="site-content">
+        {{{body}}}
+    </div>
+
+    <footer class="gh-foot{{#unless @site.secondary_navigation}} no-menu{{/unless}} gh-outer">
+        <div class="gh-foot-inner gh-inner">
+            <div class="gh-copyright">
+                {{@site.title}} &copy; {{date format="YYYY"}}
+            </div>
+            {{#if @site.secondary_navigation}}
+                <nav class="gh-foot-menu">
+                    {{navigation type="secondary"}}
+                </nav>
+            {{/if}}
+            <div class="gh-powered-by">
+                <a href="https://ghost.org/" target="_blank" rel="noopener">Powered by Ghost</a>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+{{> "side-menu"}}
+
+<script>
+    if (document.getElementsByClassName('tag-feed').length) {
+        document.getElementsByClassName('tag-feed')[0].style.height = window.innerHeight + 'px';
+    }
+</script>
+
+<script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous">
+</script>
+
+<script src='{{asset "js/main.js"}}'></script>
+
+{{> "burger"}}
+{{> "fslightbox"}}
+{{> "reframe"}}
+{{> "dropdown"}}
+{{> "jarallax"}}
+{{> "loadMore"}}
+{{> "tiny-slider"}}
+
+{{ghost_foot}}
+
+</body>
+</html>

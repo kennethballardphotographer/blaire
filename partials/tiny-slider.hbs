@@ -1,0 +1,41 @@
+{{#is "index"}}
+<script src='{{asset "js/tiny-slider/tiny-slider.js"}}'></script>
+
+<script>
+'use strict';
+var count = $('.tag-feed').attr('data-count');
+if (document.body.classList.contains('home-template')) {
+
+    var slider = tns({
+        container: ".tag-feed",
+        controls: true,
+        controlsText: [
+            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20" fill="currentColor"><path d="M26.667 14.667v2.667h-16l7.333 7.333-1.893 1.893-10.56-10.56 10.56-10.56 1.893 1.893-7.333 7.333h16z"></path></svg>',
+            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="20" height="20" fill="currentColor"><path d="M5.333 14.667v2.667h16l-7.333 7.333 1.893 1.893 10.56-10.56-10.56-10.56-1.893 1.893 7.333 7.333h-16z"></path></svg>',
+        ],
+        loop: {{@custom.loop}},
+        nav: false,
+        swipeAngle: 30,
+        mouseDrag: true,
+        responsive: {
+            0: {
+                items: 1,
+                slideBy: 1
+            },
+            1024: {
+                items: count > 1 ? 2 : count,
+                slideBy: count > 1 ? 2 : count
+            },
+            1920: {
+                items: count > 2 ? 3 : count,
+                slideBy: count > 2 ? 3 : count
+            },
+            2560: {
+                items: count > 3 ? 4 : count,
+                slideBy: count > 3 ? 4 : count,
+            },
+        }
+    });
+}
+</script>
+{{/is}}

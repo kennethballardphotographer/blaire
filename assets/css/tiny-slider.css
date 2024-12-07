@@ -1,0 +1,32 @@
+.tns-controls button {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin-top: -20px;
+    color: var(--white-color);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 0;
+    outline: none;
+    transition: opacity 0.3s var(--animation-base);
+
+    cursor: pointer;
+    user-select: none;
+}
+
+.tns-controls button[data-controls="prev"] {
+    left: var(--gap);
+	z-index: 100;
+}
+
+.tns-controls button[data-controls="next"] {
+    right: var(--gap);
+	z-index: 100;
+}

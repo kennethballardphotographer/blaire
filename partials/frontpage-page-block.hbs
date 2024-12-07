@@ -1,0 +1,25 @@
+{{#get "pages" limit="all" include="tags" order="published_at asc" filter="featured:true"}}
+<div class="tag-feed" data-count="{{pagination.total}}">
+    {{#foreach pages}}
+    <div class="tag u-placeholder">
+        {{#if feature_image}}
+        <img class="tag-image u-object-fit" src="{{img_url feature_image}}" alt="{{title}}">
+        {{/if}}
+        <div class="tag-content">
+            <h2 class="tag-name">{{title}}</h2>
+    
+            {{^has tag="#_no-excerpt"}}
+            {{#if excerpt}}
+            <div class="tag-description">
+                {{excerpt}}
+            </div>
+            {{/if}}
+            {{/has}}
+        </div>
+        <a class="u-permalink" href="{{url}}"></a>
+    </div>
+    {{/foreach}}
+</div>
+{{/get}}
+
+

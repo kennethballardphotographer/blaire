@@ -1,0 +1,11 @@
+{{!< default}}
+
+<div class="content-area">
+    <main class="site-main">
+    {{#match @custom.tags_or_pages "pages"}}
+        {{> "frontpage-page-block"}}
+    {{else match @custom.tags_or_pages "tags"}}
+        {{> "frontpage-tag-block"}}
+    {{/match}}
+    </main>
+</div>
