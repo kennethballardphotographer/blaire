@@ -34,10 +34,10 @@
                     {{> "icons/lock"}}
                 {{/has}}
                 {{/unless}}
-                <span class="post-meta-item post-meta-date">
-                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date published_at}}</time>
-                </span>
+                <span class="post-meta-item post-meta-date">{{@custom.date_prefix}} <time datetime="{{date format="YYYY-MM-DD"}}">{{date published_at}}</time></span>
+                {{#if @custom.show_read_time}}
                 <span class="post-meta-item post-meta-length">{{reading_time}}</span>
+                {{/if}}
                 {{#if @site.comments_enabled}}
                     {{comment_count class="post-meta-item"}}
                 {{/if}}

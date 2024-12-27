@@ -1,7 +1,7 @@
 {
     "name": "blaire",
     "description": "The original Dope theme... upgraded and enhanced",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "private": true,
     "engines": {
         "ghost": ">=5.9.0"
@@ -57,22 +57,53 @@
                 "default": true,
                 "group": "post"
 			},
+            "show_all_tags": {
+                "type": "boolean",
+                "default": false,
+                "group": "post",
+                "description": "Show all tags or only primary tag on posts"
+			},
+            "show_read_time": {
+                "type": "boolean",
+                "default": true,
+                "group": "post",
+                "description": "Show/hide the reading time on a post"
+			},
+            "tags_below_title": {
+                "type": "boolean",
+                "default": false,
+                "group": "post",
+                "description": "Show tags below the title on a post intead of above the title"
+			},
+            "date_prefix": {
+                "type": "text",
+                "default": "",
+                "group": "post",
+                "description": "Text to show before the date on a post - e.g., Filed on"
+            },
 			"use_pagination": {
 				"type": "boolean",
-				"default": false
+				"default": false,
+                "description": "Show the pagination on tag and author feeds, or allow the continous \"load more\" function"
 			},
 			"tags_or_pages": {
 				"type": "select",
 				"options": [ "tags", "pages" ],
 				"default": "tags",
 				"group": "homepage",
-				"description": "See the README file for details"
+				"description": "Populate the front page from the available tags, or use the featured pages instead"
 			},
 			"loop": {
 				"type": "boolean",
 				"default": false,
 				"group": "homepage",
 				"description": "Enable the Tiny Slider's looping function? Note: turn this OFF if you have a lot of tags/pages without a featured image to prevent issues."
+			},
+			"font_color": {
+				"type": "color",
+				"default": "#F5F5F5",
+				"group": "homepage",
+				"description": "Color for text displayed on the slider - adjust based on preference or images being used"
 			}
 		}
     }
