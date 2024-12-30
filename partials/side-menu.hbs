@@ -41,10 +41,12 @@
         </section>
     {{/if}}
 
+    {{#if @site.secondary_navigation}}
     <section class="widget widget-links">
         <h4 class="widget-title">More links</h4>
         {{navigation type="secondary"}}
     </section>
+    {{/if}}
 
     <button class="gh-search gh-icon-btn" aria-label="Search this site" data-ghost-search>{{> "icons/search"}}</button>
 

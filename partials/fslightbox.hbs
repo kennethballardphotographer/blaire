@@ -3,13 +3,41 @@
 <script>
     // Lightbox: https://fslightbox.com/
 
-    let galleries = document.querySelectorAll('.kg-gallery-card')
+    let galleries = document.querySelectorAll('.kg-gallery-card, .kg-image-card')
     let galleryIdx = 0
     let hasImages = false
-    
+
     let lastGallery = document
     galleries.forEach(function (gallery)
     {
+        {{#if @custom.disable_lightbox_for_single_images}}
+        // If the "gallery" is a .kg-image-card with nothing else around it,
+        // don't create a lightbox object for it.
+
+        if(gallery.classList.contains('kg-image-card'))
+        {
+            let skipLightbox = true
+
+            let prevSibling = gallery.previousElementSibling
+            let nextSibling = gallery.nextElementSibling
+
+            if(prevSibling != null)
+            {
+                skipLightbox &= (!prevSibling.classList.contains('kg-gallery-card') &&
+                                 !prevSibling.classList.contains('kg-image-card'))
+            }
+
+            if(nextSibling != null)
+            {
+                skipLightbox &= (!nextSibling.classList.contains('kg-gallery-card') &&
+                                 !nextSibling.classList.contains('kg-image-card'))
+            }
+
+            if(skipLightbox)
+                return
+        }
+        {{/if}}
+
         // Ghost has a limit of 9 images per gallery. So if two galleries are placed
         // one immediately after the other - no other blocks between them - then
         // treat the two galleries as if they are together.

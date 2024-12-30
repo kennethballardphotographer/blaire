@@ -81,6 +81,12 @@
                 "group": "post",
                 "description": "Text to show before the date on a post - e.g., Filed on"
             },
+            "disable_lightbox_for_single_images": {
+                "type": "boolean",
+                "default": false,
+                "group": "post",
+                "description": "If an image isn't part of a gallery and has no images adjacent to it, should the lightbox not be displayed?"
+            },
 			"use_pagination": {
 				"type": "boolean",
 				"default": false,

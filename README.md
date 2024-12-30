@@ -1,3 +1,4 @@
+
 # Blaire
 
 Blaire is a fork of the [Dope theme](https://github.com/TryGhost/Dope), upgraded and enhanced, for the [Ghost CMS](https://github.com/TryGhost/Ghost). You can see this theme in use on [my photography website](https://kennethballard.photo). Much of the enhancements are about using the latest versions of various components and ending reliance on the "shared-theme-assets" module.
@@ -27,6 +28,10 @@ In my  use case, the read time is worthless, so included is the option to turn i
 ### Date prefix (default: empty)
 
 In another custom theme I'm writing, I prefix a post's publication date with "Filed on". Here, I decided to make that configurable so you can decide whether you want to have text before the date. For example, on my photography website, I prefix the dates with "Shot on:".
+
+### Disable lightbox for single images (default: false)
+
+Only one image is posted on most of the street portrait posts on my photography website, and I think it's a waste to display the lightbox for those images. But you might think different which is why the code that determines that is surrounded by this condition and Off by default.
 
 ### Tags or pages (default: tags)
 
