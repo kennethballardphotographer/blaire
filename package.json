@@ -1,7 +1,7 @@
 {
     "name": "blaire",
     "description": "The original Dope theme... upgraded and enhanced",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "private": true,
     "engines": {
         "ghost": ">=5.9.0"
@@ -47,6 +47,11 @@
                 ],
                 "default": "Modern sans-serif"
             },
+            "force_dark_mode": {
+                "type": "boolean",
+                "default": false,
+                "description": "Force dark mode rather than relying on browser detection"
+            },
             "show_author": {
                 "type": "boolean",
                 "default": true,
@@ -75,6 +80,12 @@
                 "group": "post",
                 "description": "Show tags below the title on a post intead of above the title"
 			},
+            "tag_prefix": {
+                "type": "text",
+                "default": "",
+                "group": "post",
+                "description": "Text to show before the tags on a post - e.g., Filed under"
+            },
             "date_prefix": {
                 "type": "text",
                 "default": "",
@@ -92,6 +103,11 @@
 				"default": false,
                 "description": "Show the pagination on tag and author feeds, or allow the continous \"load more\" function"
 			},
+            "proportional_images_on_feeds": {
+                "type": "boolean",
+                "default": false,
+                "description": "Enable to allow an image to be displayed with proportional height instead of cropped to 312px height"
+            },
 			"tags_or_pages": {
 				"type": "select",
 				"options": [ "tags", "pages" ],

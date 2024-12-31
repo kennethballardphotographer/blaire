@@ -1,4 +1,3 @@
-
 # Blaire
 
 Blaire is a fork of the [Dope theme](https://github.com/TryGhost/Dope), upgraded and enhanced, for the [Ghost CMS](https://github.com/TryGhost/Ghost). You can see this theme in use on [my photography website](https://kennethballard.photo). Much of the enhancements are about using the latest versions of various components and ending reliance on the "shared-theme-assets" module.
@@ -17,6 +16,10 @@ I've kept the bulk of Dope's look and feel while making enhancements under the h
 
 I have a lot of posts under one specific tag - "[street portraits](https://kennethballard.photo/tag/street-portraits/)". So the continuous "load more" in Dope and other themes isn't viable. So I added pagination into the tag feed. It's Off by default to preserve the original behavior, so turn it On in the admin panel if you want that.
 
+### Proportional images on feeds (default: false)
+
+Cropping down featured images to 500x312 on the tag and author feeds is one frustration I definitely wanted to tackle. Since the site where I'm using this is a photography website, I want to ensure the featured image is displayed with its proper portions instead of it being cropped down.
+
 ### Show all tags (default: false)
 
 The Dope theme is programmed to only show the primary tag on a post, but you may want to show all tags for a post. In my use case, having all tags visible is better.
@@ -29,6 +32,10 @@ In my  use case, the read time is worthless, so included is the option to turn i
 
 In another custom theme I'm writing, I prefix a post's publication date with "Filed on". Here, I decided to make that configurable so you can decide whether you want to have text before the date. For example, on my photography website, I prefix the dates with "Shot on:".
 
+### Tag prefix (default: empty)
+
+Similar to the "date prefix", except for specifying a prefix to display before the tags on a post.
+
 ### Disable lightbox for single images (default: false)
 
 Only one image is posted on most of the street portrait posts on my photography website, and I think it's a waste to display the lightbox for those images. But you might think different which is why the code that determines that is surrounded by this condition and Off by default.
@@ -40,6 +47,12 @@ The front page relying on tags only was the first thing I changed, since I wante
 Switching it over to "pages", again gives more control over how your site is presented. Only featured pages, though, will be displayed, sorted by publication date oldest to newest, so manipulate those dates to change the order in which the pages are displayed. You can also tag a page with "#_no-excerpt" if you don't want the page's excerpt to be displayed in the slider - e.g., a page for a contact form.
 
 ## Features and enhancements
+
+### Dark mode
+
+This isn't because "dark mode is all the rage". I wrote this theme for my photography website, and photos always look better, stand out better on a dark background. I also prefer dark mode themes, honestly.
+
+By default this will rely on browser detection, but can be forced by setting the "Force dark mode" option to On in the theme customization panel.
 
 ### Galleries on mobile
 
@@ -77,10 +90,6 @@ But there is far more context awareness in loading JavaScript modules, meaning y
 ## Future plans
 
 (Side note: remembering to update this README if these happen.)
-
-### Dark mode
-
-This isn't because "dark mode is all the rage". I wrote this theme for my photography website, and photos always look better, stand out better on a dark background. So a dark mode will likely be something I pursue. I also prefer dark mode themes, honestly.
 
 ### Slider customizations via admin panel
 

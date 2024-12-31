@@ -1,10 +1,10 @@
 <article class="{{post_class}}{{#unless feature_image}} no-image{{/unless}}">
     {{#if feature_image}}
         <figure class="post-media">
-            <div class="u-placeholder same-height rectangle">
+            <div {{#unless @custom.proportional_images_on_feeds}}class="u-placeholder same-height rectangle"{{/unless}}>
                 <a class="post-image-link" href="{{url}}">
                     <img
-                        class="post-image u-object-fit"
+                        class="post-image{{#unless @custom.proportional_images_on_feeds}} u-object-fit{{/unless}}"
                         srcset="{{img_url feature_image size="s"}} 300w,
                                 {{img_url feature_image size="m"}} 750w,
                                 {{img_url feature_image size="l"}} 960w,

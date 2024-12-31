@@ -1,0 +1,86 @@
+<style>
+{{#unless @custom.force_dark_mode}}
+@media (prefers-color-scheme: dark) {
+{{/unless}}
+
+{{^is "index"}}
+.burger,
+{{/is}}
+body,
+.off-canvas,
+.post-tag {
+    background-color: rgb(12,12,12);
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.newer-posts,
+.older-posts,
+.kg-bookmark-author,
+.kg-bookmark-icon,
+.kg-bookmark-publisher,
+.kg-bookmark-description,
+.kg-bookmark-title,
+.kg-file-card-contents,
+.kg-file-card-icon svg,
+.kg-product-card-description,
+.gh-content figcaption a,
+.gh-foot,
+.gh-foot a,
+.logo-text,
+.post-title-link,
+.off-canvas .nav a,
+.single-post .post-title,
+.term-name {
+    color: whitesmoke;
+}
+
+code {
+    background-color: grey !important;
+    color: rgb(12,12,12) !important;
+}
+
+.kg-product-card-rating {
+    color: gold;
+}
+
+.kg-bookmark-container, .kg-bookmark-container *,
+.kg-product-card-container, .kg-product-card-container *,
+.kg-file-card, .kg-file-card * {
+    background-color: rgb(12,12,12) !important;
+}
+
+.kg-file-card-container:hover {
+    background-color: rgb(12,12,12) !important;
+}
+
+.canvas-close svg {
+    fill: whitesmoke;
+}
+
+.gh-content blockquote {
+    border-left-color: grey;
+}
+
+.read-more,
+.gh-content a {
+    color: grey;
+    font-weight: bold;
+}
+
+{{^is "index"}}
+.burger::before,
+.burger::after {
+    background-color: whitesmoke;
+}
+{{/is}}
+
+{{#unless @custom.force_dark_mode}}
+}
+{{/unless}}
+</style>

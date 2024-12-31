@@ -1,6 +1,7 @@
 {{#is "post"}}
 {{#if @custom.show_all_tags}}
     <div class="post-tags">
+        <span class="post-tag-prefix">{{@custom.tag_prefix}}</span>
         {{#foreach tags}}
         <span><a class="post-tag post-tag-{{slug}}" href="{{url}}" title="{{name}}">{{name}}</a></span>
         {{/foreach}}
@@ -8,7 +9,7 @@
 {{else}}
     {{#primary_tag}}
     <div class="post-tags">
-        <a class="post-tag post-tag-{{slug}}" href="{{url}}" title="{{name}}">{{name}}</a>
+        <span class="post-tag-prefix">{{@custom.tag_prefix}}</span><a class="post-tag post-tag-{{slug}}" href="{{url}}" title="{{name}}">{{name}}</a>
     </div>
     {{/primary_tag}}
 {{/if}}

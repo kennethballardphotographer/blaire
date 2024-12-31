@@ -39,6 +39,7 @@
 .canvas-close svg {
     width: 24px;
     height: 24px;
+    fill: currentColor;
 }
 
 html:not(.canvas-visible) .off-canvas {
