@@ -1,10 +1,10 @@
 {
     "name": "blaire",
     "description": "The original Dope theme... upgraded and enhanced",
-    "version": "0.3.0",
+    "version": "0.4.0",
     "private": true,
     "engines": {
-        "ghost": ">=5.9.0"
+        "ghost": ">=5.105.0"
     },
     "license": "MIT",
     "author": {
@@ -52,6 +52,11 @@
                 "default": false,
                 "description": "Force dark mode rather than relying on browser detection"
             },
+            "meta_below_title": {
+                "type": "boolean",
+                "default": false,
+                "description": "Show the post metadata (date, reading time, etc.) below the title on a tag and author feed instead of above"
+			},
             "show_author": {
                 "type": "boolean",
                 "default": true,

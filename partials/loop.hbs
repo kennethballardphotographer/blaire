@@ -28,29 +28,16 @@
 
     <div class="post-wrapper">
         <header class="post-header">
-            <div class="post-meta">
-                {{#unless access}}
-                {{^has visibility="public"}}
-                    {{> "icons/lock"}}
-                {{/has}}
-                {{/unless}}
-                <span class="post-meta-item post-meta-date">{{@custom.date_prefix}} <time datetime="{{date format="YYYY-MM-DD"}}">{{date published_at}}</time></span>
-                {{#if @custom.show_read_time}}
-                <span class="post-meta-item post-meta-length">{{reading_time}}</span>
-                {{/if}}
-                {{#if @site.comments_enabled}}
-                    {{comment_count class="post-meta-item"}}
-                {{/if}}
-                {{#if featured}}
-                    <span class="post-meta-featured">
-                        {{> "icons/star"}}
-                    </span>
-                {{/if}}
-            </div>
+            {{#unless @custom.meta_below_title}}
+            <div class="post-meta">{{> "post-meta"}}</div>
+            {{/unless}}
 
             <h2 class="post-title">
                 <a class="post-title-link" href="{{url}}">{{title}}</a>
             </h2>
+            {{#if @custom.meta_below_title}}
+            <div class="post-meta">{{> "post-meta"}}</div>
+            {{/if}}
         </header>
 
         {{#if excerpt}}

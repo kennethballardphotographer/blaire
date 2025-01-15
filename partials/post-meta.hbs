@@ -1,6 +1,12 @@
-{{#is "post"}}
 <div class="post-meta">
-    <span>{{@custom.date_prefix}} <time class="post-meta-item post-meta-date" datetime="{{date format="YYYY-MM-DD"}}">{{date published_at}}</time></span>
+    {{#unless access}}
+    {{^has visibility="public"}}
+        {{> "icons/lock"}}
+    {{/has}}
+    {{/unless}}
+    {{^is "page"}}
+    <span class="post-meta-item post-meta-date">{{@custom.date_prefix}} <time datetime="{{date format="YYYY-MM-DD"}}">{{date published_at}}</time></span>
+    {{/is}}
 
     {{#if @custom.show_read_time}}
         <span class="post-meta-item post-meta-length">{{reading_time}}</span>
@@ -10,10 +16,11 @@
         {{comment_count class="post-meta-item"}}
     {{/if}}
 
+    {{^is "page"}}
     {{#if featured}}
         <span class="post-meta-featured">
             {{> "icons/star"}}
         </span>
     {{/if}}
+    {{/is}}
 </div>
-{{/is}}

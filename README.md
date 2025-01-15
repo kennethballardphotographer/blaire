@@ -20,6 +20,10 @@ I have a lot of posts under one specific tag - "[street portraits](https://kenne
 
 Cropping down featured images to 500x312 on the tag and author feeds is one frustration I definitely wanted to tackle. Since the site where I'm using this is a photography website, I want to ensure the featured image is displayed with its proper portions instead of it being cropped down.
 
+### Show meta below the title (default: false)
+
+Normally on a tag and author feed, the post metadata is shown above the title. I personally prefer having that information below the title and before the excerpt. But I know you might feel different so this is Off by default.
+
 ### Show all tags (default: false)
 
 The Dope theme is programmed to only show the primary tag on a post, but you may want to show all tags for a post. In my use case, having all tags visible is better.
