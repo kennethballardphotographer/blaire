@@ -1,0 +1,20 @@
+{{#is "author,tag"}}
+{{#match @custom.featured_image_location '>=' 'Alternate Left Start'}}
+{{#match @custom.featured_image_location '<=' 'Alternate Right Start'}}
+<script>
+    let posts = document.querySelectorAll('article.post')
+    {{#match @custom.featured_image_location 'Alternate Right Start'}}
+    let postIdx = 0;
+    {{else}}
+    let postIdx = 1;
+    {{/match}}
+
+    for(; postIdx < posts.length; postIdx += 2)
+    {
+        posts[postIdx].classList.add('featured-on-right')
+    }
+
+</script>
+{{/match}}
+{{/match}}
+{{/is}}

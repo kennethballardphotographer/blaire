@@ -7,7 +7,7 @@
         <section class="term">
             <div class="term-wrapper">
                 <h1 class="term-name">{{name}}</h1>
-                {{#if description}}<div class="term-description">{{description}}</div>{{/if}}
+                {{#if description}}<div class="term-description">{{#if @custom.html_descriptions}}{{{description}}}{{else}}{{description}}{{/if}}</div>{{/if}}
             </div>
         </section>
     {{/tag}}

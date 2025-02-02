@@ -1,12 +1,10 @@
 # Blaire
 
-Blaire is a fork of the [Dope theme](https://github.com/TryGhost/Dope), upgraded and enhanced, for the [Ghost CMS](https://github.com/TryGhost/Ghost). You can see this theme in use on [my photography website](https://kennethballard.photo). Much of the enhancements are about using the latest versions of various components and ending reliance on the "shared-theme-assets" module.
-
-I will be keeping this in sync with the Dope theme for the most part, but there will come a point where I decide to deviate heavily from Dope's styling. Such as adding a "dark mode" or making this entirely a dark theme, along with changing up fonts and colors. Since this is the theme I use on my photography website, it'll all depend on how I want to adjust the look and feel there.
+Blaire is a fork of the [Dope theme](https://github.com/TryGhost/Dope), upgraded and enhanced, for the [Ghost CMS](https://github.com/TryGhost/Ghost). You can see this theme in use on [my photography website](https://kennethballard.photo). 
 
 ## Installing
 
-Just download the latest .zip file from the Releases and upload it into your Ghost instance.
+Just download the latest .zip file from the Releases and upload it into your Ghost instance. Note: be sure to remove the version number from the download file. Ghost cannot use the .tar.gz archives.
 
 ## Options
 
@@ -23,6 +21,20 @@ Cropping down featured images to 500x312 on the tag and author feeds is one frus
 ### Show meta below the title (default: false)
 
 Normally on a tag and author feed, the post metadata is shown above the title. I personally prefer having that information below the title and before the excerpt. But I know you might feel different so this is Off by default.
+
+### Allow HTML in author bios and tag descriptions (default: false)
+
+Author bios and tag descriptions are limited to 500 characters and, by default, are treated as plaintext. So no links or custom formatting. On my website, I have featured several photoshoots with a local model, Meranda McDermott. And on the [tag feed for her shoots](https://kennethballard.photo/tag/meranda/), I want to link directly to her online portfolio. The only way that is possible is embedding HTML into the tag description.
+
+Handlebars.js [allows for this quite easily](https://handlebarsjs.com/guide/expressions.html#html-escaping). If you surround a variable with {{ }}  two curly braces, it'll treat it as text and translate characters to HTML entities where necessary. Surround it in {{{ }}} three curly braces, though, and it'll treat the variable as raw HTML.
+
+By default this is Off. Turning it On will affect how existing descriptions are displayed given that characters will not be translated to HTML entities. So before turning this on and taking advantage, go through your tag descriptions and author bios.
+
+### Featured image location (default: Left)
+
+Four options: Left (default), Right, Alternating Left Start, and Alternating Right Start.
+
+The original Dope theme always displays the featured image in a tag and author feed on the left. I decided I wanted an alternating pattern. So now you have the choice to display the featured image on the left or right, or in an alternating pattern. "Alternate Left Start" means the featured image for the first post in the  feed will be on the left, and "Alternate Right Start" means it'll be on the right, alternating from there.
 
 ### Show all tags (default: false)
 
@@ -64,7 +76,7 @@ That galleries try to display "normally" on mobile has always been one of my ann
 
 ### Owl Carousel -> [Tiny Slider 2](https://github.com/ganlanyuan/tiny-slider)
 
-Why swap out Owl Carousel? The main reason is I noticed some issues with using it on mobile, so I went looking to see if a newer version was available in case what was distributed with Dope was out of date. And that's when I discovered...
+Why swap out Owl Carousel? The main reason is I noticed some issues using it on mobile, so I went looking to see if a newer version was available in case what was distributed with Dope was out of date. And that's when I discovered...
 
 **It's dead, Jim.** The [last commit](https://github.com/OwlCarousel2/OwlCarousel2/commit/4eedccac4ea061931162a86e3f268332c16a1ad0) was on July 31, 2019, which updated the README to say the project is dead and recommending switching over to Tiny Slider 2. And sure, we can reasonably say that Tiny Slider 2 is likely also dead given the [last commit](https://github.com/ganlanyuan/tiny-slider/commit/4d709735c417c2483e77a22d017fc1b18c04f0d4) was in November 2021. But...
 
@@ -78,10 +90,7 @@ Dope relies on an outdated version of [Photoswipe](https://photoswipe.com/) for 
 
 ### Other upgrades
 
-* imagesLoaded - Latest pulled from [Github repo](https://github.com/desandro/imagesloaded)
-* jQuery - Upgraded to 3.7.1, and there'll be an emphasis on keeping it updated for performance and security
-* jarallax - Latest pulled from [Github repo](https://github.com/nk-o/jarallax/)
-* reframe - Latest pulled from [Github repo](https://github.com/dollarshaveclub/reframe.js)
+For several libraries, the theme is relying on a CDN to better allow them to be kept up to date: [imagesLoaded](https://www.jsdelivr.com/package/npm/imagesloaded), [jarallax](https://www.jsdelivr.com/package/npm/jarallax), and [reframe.js](https://www.jsdelivr.com/package/npm/reframe.js). [jQuery](https://jquery.com/) has also been upgraded to version 3.7.1 via its CDN.
 
 ### Heavier reliance on partials
 

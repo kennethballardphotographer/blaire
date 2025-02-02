@@ -1,18 +1,22 @@
 {{#is "post, page"}}
-<script src='{{asset "js/jarallax/jarallax.min.js"}}'></script>
-<script src='{{asset "js/imagesloaded/imagesloaded.pkgd.min.js"}}'></script>
-<script>
-var image = $('.jarallax-img');
-if (image) {
-    var options = {
-        disableParallax: /iPad|iPhone|iPod|Android/,
-        disableVideo: /iPad|iPhone|iPod|Android/,
-        speed: 0.1,
-    };
+{{#match show 'css'}}
+    <link rel="stylesheet" href='https://cdn.jsdelivr.net/npm/jarallax@2.2.1/dist/jarallax.min.css'>
+{{else}}
+    <script src='https://cdn.jsdelivr.net/npm/jarallax@2.2.1/dist/jarallax.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js'></script>
+    <script>
+    var image = $('.jarallax-img');
+    if (image) {
+        var options = {
+            disableParallax: /iPad|iPhone|iPod|Android/,
+            disableVideo: /iPad|iPhone|iPod|Android/,
+            speed: 0.1,
+        };
 
-    image.imagesLoaded(function () {
-        image.parent().jarallax(options).addClass('initialized');
-    });
-}
-</script>
+        image.imagesLoaded(function () {
+            image.parent().jarallax(options).addClass('initialized');
+        });
+    }
+    </script>
+{{/match}}
 {{/is}}

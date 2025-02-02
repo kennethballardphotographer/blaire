@@ -14,7 +14,7 @@
             <h4 class="author-name">
                 <a href="{{url}}">{{name}}</a>
             </h4>
-            <div class="author-bio">{{bio}}</div>
+            <div class="author-bio">{{#if @custom.html_descriptions}}{{{bio}}}{{else}}{{bio}}{{/if}}</div>
             {{#if location}}
                 <div class="author-location">{{location}}</div>
             {{/if}}

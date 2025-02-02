@@ -3,10 +3,23 @@
     align-items: flex-start;
 }
 
+.post-feed .featured-on-right {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.featured-on-right .post-wrapper {
+    width: 100%;
+}
+
 .post-feed .post-media {
     flex-shrink: 0;
     width: 500px;
     margin-right: 40px;
+}
+
+.featured-on-right .post-media {
+    margin-left: 40px;
 }
 
 .post-feed .post-meta {
@@ -41,6 +54,10 @@
     .post-feed .post-footer {
         margin-top: 15px;
     }
+
+    .post-feed .featured-on-right {
+        flex-direction: row;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -56,5 +73,9 @@
     .post-feed .post-title {
         font-size: 24px;
         letter-spacing: 0;
+    }
+
+    .post-feed .featured-on-right {
+        flex-direction: row;
     }
 }

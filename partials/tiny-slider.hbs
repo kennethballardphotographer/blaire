@@ -1,5 +1,9 @@
 {{#is "index"}}
-<script src='{{asset "js/tiny-slider/tiny-slider.js"}}'></script>
+{{#match show 'css'}}
+    <link rel="stylesheet" href='https://cdn.jsdelivr.net/npm/tiny-slider@2.9.4/dist/tiny-slider.min.css'>
+    <link rel="stylesheet" href='{{asset "css/tiny-slider.css"}}'>
+{{else}}
+<script src='https://cdn.jsdelivr.net/npm/tiny-slider@2.9.4/dist/min/tiny-slider.min.js'></script>
 
 <script>
 'use strict';
@@ -38,4 +42,5 @@ if (document.body.classList.contains('home-template')) {
     });
 }
 </script>
+{{/match}}
 {{/is}}

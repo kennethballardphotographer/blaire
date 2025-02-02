@@ -1,7 +1,7 @@
 {
     "name": "blaire",
     "description": "The original Dope theme... upgraded and enhanced",
-    "version": "0.4.0",
+    "version": "0.5.0",
     "private": true,
     "engines": {
         "ghost": ">=5.105.0"
@@ -57,6 +57,22 @@
                 "default": false,
                 "description": "Show the post metadata (date, reading time, etc.) below the title on a tag and author feed instead of above"
 			},
+            "html_descriptions": {
+                "type": "boolean",
+                "default": false,
+                "description": "Turn On to allow raw HTML in author bios and tag descriptions"
+            },
+            "featured_image_location": {
+                "type": "select",
+                "default": "Left",
+                "description": "Left (default) to show featured image on left in author and tag feeds, Right to show it on the right, and Alternate to alternate between left and right",
+                "options": [
+                    "Left",
+                    "Right",
+                    "Alternate Left Start",
+                    "Alternate Right Start"
+                ]
+            },
             "show_author": {
                 "type": "boolean",
                 "default": true,
