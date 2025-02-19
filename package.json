@@ -1,7 +1,7 @@
 {
     "name": "blaire",
     "description": "The original Dope theme... upgraded and enhanced",
-    "version": "0.5.0",
+    "version": "0.5.1",
     "private": true,
     "engines": {
         "ghost": ">=5.105.0"
